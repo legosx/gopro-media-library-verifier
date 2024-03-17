@@ -22,9 +22,8 @@ You can also use it for other files that are not created by Gopro camera.
 2. Then run:
 
 ```bash
-git clone https://github.com/legosx/gopro-media-library-verifier.git
 cd $GOPATH/bin
-go install github.com/legosx/gopro-media-library-verifier
+go install github.com/legosx/gopro-media-library-verifier@main
 ```
 
 ## Usage
