@@ -69,11 +69,32 @@ func goBuild(input, output string, buildEnv BuildEnv) error {
 }
 
 func (Test) Unit() error {
-	a := []string{"test", "./...", "-test.short", "-race"}
-
-	return sh.RunV("go", a...)
+	return test()
 }
 
 func (Lint) Go() error {
 	return sh.RunV("bash", "-c", "golangci-lint run")
+}
+
+func test(args ...string) error {
+	a := []string{"test", "./...", "-test.short", "-race"}
+	a = append(a, args...)
+
+	return sh.RunV("go", a...)
+}
+
+func (Test) Coverage() (err error) {
+	if err = test("-coverprofile=coverage.tmp", "-covermode=atomic", "-coverpkg", "./..."); err != nil {
+		return err
+	}
+
+	if err = sh.RunV("bash", "-c", "cat coverage.tmp > coverage"); err != nil {
+		return err
+	}
+
+	if err = sh.RunV("bash", "-c", "go tool cover -func=coverage | tail -n1"); err != nil {
+		return err
+	}
+
+	return sh.RunV("bash", "-c", "gocover-cobertura < coverage > coverage.xml")
 }

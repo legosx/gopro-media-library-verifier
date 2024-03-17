@@ -1,5 +1,7 @@
 # GoPro Media Library Verifier
 
+![Coverage Status](https://coveralls.io/repos/github/legosx/gopro-media-library-verifier/badge.svg?branch=main)
+
 This CLI tool will make sure that your precious Gopro media is safely uploaded to the cloud.
 You can also use it for other files that are not created by Gopro camera.
 
