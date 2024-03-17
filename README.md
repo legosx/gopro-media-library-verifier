@@ -95,7 +95,7 @@ gopro-media-library-verifier verify -p /path/to/your/media -m direct
 gopro-media-library-verifier verify -p /path/to/your/media -m curl
 ```
 
-## Licence
+## License
 
 MIT License
 
