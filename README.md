@@ -33,7 +33,8 @@ go install github.com/legosx/gopro-media-library-verifier
 
 1. Login to https://plus.gopro.com/media-library/ or just open the page if you are already logged in.
 2. Open developer tools of your browser.
-3. Lookup for "api." requests in Network tab. If the results are empty, refresh or scroll the page - new request to API should go out.
+3. Lookup for "search" requests in Network tab. If the results are empty, refresh or scroll the page - new request to API should go out. 
+You should pick the request with `Request method: GET` and `Status Code: 200 OK`.
 4. From here on, you have 2 options to specify the token for the tool:
    1. Click on the request and go to the Request Headers section. You should see "Authorization:" header with the value
    starting with "Bearer ". Copy the value after "Bearer " and use it as a token for the tool.
