@@ -94,7 +94,7 @@ func (s Scanner) GetFileList(dirPath string) (list []File, err error) {
 		}
 
 		list = append(list, File{
-			Name: strings.ToLower(fileInfo.Name()),
+			Name: fileInfo.Name(),
 			Size: fileInfo.Size(),
 			Path: path.Join(dirPath, fileInfo.Name()),
 		})

@@ -124,7 +124,7 @@ func (c Client) getPage(pageNumber, perPage int) (page *page, err error) {
 		"order_by":          "captured_at",
 		"per_page":          strconv.Itoa(perPage),
 		"page":              strconv.Itoa(pageNumber),
-		"type":              "",
+		"type":              strings.Join(c.getDefaultTypes(), ","),
 	})
 	if err != nil {
 		return nil, errors.Wrap(err, "error getting data from client")
@@ -202,4 +202,18 @@ func (c Client) getDefaultProcessingStates() []string {
 
 func (c Client) getDefaultFields() []string {
 	return []string{"filename", "file_size"}
+}
+
+func (c Client) getDefaultTypes() []string {
+	return []string{
+		"Burst",
+		"BurstVideo",
+		"Continuous",
+		"LoopedVideo",
+		"Photo",
+		"TimeLapse",
+		"TimeLapseVideo",
+		"Video",
+		"MultiClipEdit",
+	}
 }

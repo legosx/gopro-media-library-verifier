@@ -35,9 +35,10 @@ go install github.com/legosx/gopro-media-library-verifier@main
 3. Lookup for "search" requests in Network tab. If the results are empty, refresh or scroll the page - new request to API should go out. 
 You should pick the request with `Request method: GET` and `Status Code: 200 OK`.
 4. From here on, you have 2 options to specify the token for the tool:
-   1. Click on the request and go to the Request Headers section. You should see "Authorization:" header with the value
-   starting with "Bearer ". Copy the value after "Bearer " and use it as a token for the tool.
+   1. Click on the request and go to the Cookie section. You should see "gp_access_token" cookie.
+   Copy the value and use it as a token for the tool.
    2. You can just do right mouse click and select "Save as cURL". Later you can paste it in the tool.
+   NOTE! That's not supported yet, to be done in next releases
 
 ### Run!
 
