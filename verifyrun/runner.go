@@ -107,7 +107,8 @@ func (r Runner) outputFilePaths(filePaths []string, outputFilePath string) (err 
 		}
 		fmt.Printf("\nOutput written to %s\n\n", outputFilePath)
 	} else {
-		fmt.Printf("\nFiles that still can be uploaded to Gopro Media Library:\n%s\n\n", filePathsInline)
+		fmt.Printf("\nFiles that still can be uploaded to Gopro Media Library:\n%s\n", filePathsInline)
+		fmt.Printf("Total: %d\n", len(filePaths))
 	}
 
 	return nil
