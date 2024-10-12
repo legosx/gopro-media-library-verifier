@@ -307,7 +307,7 @@ func TestClient_GetPage(t *testing.T) {
 						q := u.Query()
 						assert.Equal(t, "2", q.Get("per_page"))
 						assert.Equal(t, "captured_at", q.Get("order_by"))
-						assert.Equal(t, "", q.Get("type"))
+						assert.Equal(t, "Burst,BurstVideo,Continuous,LoopedVideo,Photo,TimeLapse,TimeLapseVideo,Video,MultiClipEdit", q.Get("type"))
 						assert.Equal(t, "filename,file_size", q.Get("fields"))
 						assert.Equal(t, "registered,rendering,pretranscoding,transcoding,failure,ready", q.Get("processing_states"))
 						assert.Equal(t, "1", q.Get("page"))
