@@ -9,6 +9,7 @@ import (
 	"github.com/legosx/gopro-media-library-verifier/verify"
 	"github.com/spf13/cobra"
 	"os"
+	"sort"
 	"strings"
 )
 
@@ -92,6 +93,8 @@ func (r Runner) outputFilePaths(filePaths []string, outputFilePath string) (err 
 		fmt.Println("\nAll files from specified local directory are already uploaded to Gopro Media Library.")
 		return nil
 	}
+
+	sort.Strings(filePaths)
 
 	filePathsInline := ""
 	for _, filePath := range filePaths {
