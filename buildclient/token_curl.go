@@ -59,7 +59,7 @@ func (t TokenPromptMethodCURL) Validate(value string) (err error) {
 }
 
 func (t TokenPromptMethodCURL) getBearerValue(input string) (value string, err error) {
-	re := regexp.MustCompile(`Bearer ([\w-]+(\.[\w-]+)*(\.[\w-]+)*)`)
+	re := regexp.MustCompile(`; gp_access_token=([\w-]+(\.[\w-]+)*(\.[\w-]+)*);`)
 	if match := re.FindStringSubmatch(input); len(match) > 1 {
 		return match[1], nil
 	}

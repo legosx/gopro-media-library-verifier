@@ -38,7 +38,6 @@ You should pick the request with `Request method: GET` and `Status Code: 200 OK`
    1. Click on the request and go to the Cookie section. You should see "gp_access_token" cookie.
    Copy the value and use it as a token for the tool.
    2. You can just do right mouse click and select "Save as cURL". Later you can paste it in the tool.
-   NOTE! That's not supported yet, to be done in next releases
 
 ### Run!
 
