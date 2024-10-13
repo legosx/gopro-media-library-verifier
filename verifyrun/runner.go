@@ -97,8 +97,11 @@ func (r Runner) outputFilePaths(filePaths []string, outputFilePath string) (err 
 	sort.Strings(filePaths)
 
 	filePathsInline := ""
-	for _, filePath := range filePaths {
+	for i, filePath := range filePaths {
 		filePathsInline = filePathsInline + fmt.Sprintln(filePath)
+		if (i+1)%100 == 0 {
+			filePathsInline = filePathsInline + "\n"
+		}
 	}
 
 	if outputFilePath != "" {
